@@ -1,0 +1,173 @@
+﻿:root {
+    --outerborderColor: rgb(205, 198, 190);
+    --logosBackgroundColor: rgb(220, 211, 204);
+    --logosTextColor: rgb(170, 92, 74);
+    --logosTextBackground: rgb(215, 195, 170, 80%);
+    --logosTextBackgroundOdd: rgb(225, 215, 195, 80%);
+    --logosTopCard: rgb(204, 90, 0);
+    --mythosBackgroundColor: rgb(180, 161, 189);
+    --mythosTextColor: rgb(155, 134, 165);
+    --mythosTextBackground: rgb(179, 168, 177, 80%);
+}
+
+body {
+    background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+p {
+    font-size: 28px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+}
+
+input[type="text"] {
+    background-color: rgb(0,0,0,0.0);
+    border: 0px;
+    width: 100%;
+    font-size: 18px;
+    padding: 0px;
+}
+
+.card {
+    position: absolute;
+    border: solid var(--outerborderColor);
+    border-width: 15px 10px;
+    width: 250px;
+    border-radius: 15px;
+    padding: 0px
+}
+
+.trackingStatusRow {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.trackingStatusRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column p {
+    font-size: 8px;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: initial;
+    appearance: initial;
+    background: rgb(230, 230, 240);
+    width: 10px;
+    height: 10px;
+    border: none;
+    position: relative;
+}
+
+.crack input[type="checkbox"]:checked {
+    background: red;
+}
+
+    .crack input[type="checkbox"]:checked:after {
+        content: "X";
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+.backText {
+    color: rgb(230, 230, 240, 40%);
+    position: relative;
+    width: 100%;
+    height: 34px;
+    border-bottom: dashed;
+}
+
+    .backText p {
+        padding: 0px;
+        font-size: 38px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        display: block;
+        position: absolute;
+        text-align: center;
+        margin-top: -4px;
+    }
+
+    .backText input[type="text"] {
+        font-weight: bolder;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1;
+        margin-top: 6px;
+    }
+
+.section input[type="text"] {
+    border-bottom: dotted rgb(200,200,200);
+}
+
+.logos .sectionPowerTag input[type="text"]:nth-child(odd) {
+    background-color: var(--logosTextBackgroundOdd);
+}
+
+.logos {
+    background-color: var(--logosBackgroundColor);
+    color: var(--logosTextColor);
+}
+
+.logosTop {
+    background-color: var(--logosTopCard);
+}
+
+    .logosTop p {
+        background-color: var(--logosTopCard);
+    }
+
+.logosTheme p {
+    background-color: var(--logosTextBackground);
+}
+
+.logos .backText {
+    background-color: var(--logosTextBackground);
+}
+
+    .logos .backText input[type="text"] {
+        color: var(--logosTopCard);
+    }
+
+.mythos {
+    background-color: var(--mythosBackgroundColor);
+    color: var(--mythosTextColor);
+}
+
+.mythosTheme {
+    background-color: var(--mythosTextBackground);
+}
