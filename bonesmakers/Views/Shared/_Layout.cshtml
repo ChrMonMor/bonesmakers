@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div>
@@ -19,7 +20,7 @@
         </div>
     </div>
     <div>
-        <main>
+        <main style="display:flex;">
             @RenderBody()
         </main>
         <footer>
@@ -27,5 +28,6 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/JavaScript.js"></script>
 </body>
 </html>

@@ -5,15 +5,21 @@
     --logosTextBackground: rgb(215, 195, 170, 80%);
     --logosTextBackgroundOdd: rgb(225, 215, 195, 80%);
     --logosTopCard: rgb(204, 90, 0);
-    --mythosBackgroundColor: rgb(180, 161, 189);
-    --mythosTextColor: rgb(155, 134, 165);
-    --mythosTextBackground: rgb(179, 168, 177, 80%);
+
+    --mythosBackgroundColor: rgb(179, 168, 177, 255);
+    --mythosTextColor: rgba(100,82,98,255);
+    --mythosTextBackground: rgba(178,160,188,255);
+    --mythosTextBackgroundOdd: rgb(169, 148, 167, 70%);
+    --mythosTopCard: rgba(111,92,113,255);
 }
 
 body {
     background-color: black;
     margin: 0px;
     padding: 0px;
+    display: flex;
+}
+main {
     display: flex;
 }
 
@@ -170,7 +176,6 @@ select {
 }
 
 .card .top input[type="text"] {
-    background-color: var(--logosTopCard);
     color: black;
     text-transform: uppercase;
     font-size: 18px;
@@ -185,26 +190,59 @@ select {
     margin-top: -22px;
 }
 
-.tags input[type="checkbox"] {
-    font-size: 8px;
-    float: right;
-    text-align: center;
-    margin-top: -18px;
-    margin-right: 7px;
-    cursor: pointer;
+.tags {
+    display: flex;
+    border-bottom: dotted rgb(200,200,200,1);
 }
 
-    .tags input[type="checkbox"]:checked:after {
-        font-size: 12px;
-        content: "🔥";
-        position: absolute;
-        left: 0%;
-        top: -50%;
+    .tags input[type="text"]:nth-child(1) {
+        width: 10%;
+        border: none;
+        text-align: center;
+        text-transform: Uppercase;
+        font-weight: bold;
     }
 
+    .tags input[type="text"]:nth-child(2) {
+        width: 85%;
+        border: none;
+    }
 
-.logos .section input[type="text"]:nth-child(odd) {
+    .tags input[type="checkbox"] {
+        font-size: 8px;
+        float: right;
+        text-align: center;
+        margin-top: 5px;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+.sectionPowerTag input[type="checkbox"]:checked:after {
+    font-size: 16px;
+    content: "🔥";
+    position: absolute;
+    left: -40%;
+    top: -50%;
+}
+
+.sectionWeakTag input[type="checkbox"]:checked:after {
+    font-size: 16px;
+    content: "⚡";
+    position: absolute;
+    left: -60%;
+    top: -50%;
+}
+
+.logos .tags:nth-child(odd) {
     background-color: var(--logosTextBackgroundOdd);
+}
+
+.logos .section .tags input[type="text"]:nth-child(1n+4) {
+    background-color: var(--logosTextBackgroundOdd);
+}
+
+.logos .section .tags input[type="text"]:nth-child(2n+1) {
+    border-right: dotted rgb(200,200,200,1);
 }
 
 .logos {
@@ -233,11 +271,48 @@ select {
         color: var(--logosTopCard);
     }
 
+    .logos .top input[type="text"] {
+        background-color: var(--logosTopCard);
+    }
+
 .mythos {
     background-color: var(--mythosBackgroundColor);
     color: var(--mythosTextColor);
 }
 
-.mythosTheme {
-    background-color: var(--mythosTextBackground);
-}
+    .mythos .tags:nth-child(odd) {
+        background-color: var(--mythosTextBackgroundOdd);
+    }
+
+    .mythos .section .tags input[type="text"]:nth-child(1n+4) {
+        background-color: var(--mythosTextBackgroundOdd);
+    }
+
+    .mythos .section .tags input[type="text"]:nth-child(2n+1) {
+        border-right: dotted rgb(200,200,200,1);
+    }
+
+    .mythos .top p {
+        background-color: var(--mythosTopCard);
+    }
+
+    .mythos select {
+        background-color: var(--mythosTopCard);
+        color: var(--mythosTextColor);
+    }
+
+    .mythos p {
+        background-color: var(--mythosTextBackground);
+    }
+
+    .mythos .backText {
+        background-color: var(--mythosTextBackground);
+    }
+
+    .mythos input[type="text"] {
+        color: var(--mythosTopCard);
+    }
+
+    .mythos .top input[type="text"] {
+        background-color: var(--mythosTopCard);
+    }
