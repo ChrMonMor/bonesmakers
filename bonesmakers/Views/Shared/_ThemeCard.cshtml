@@ -1,0 +1,108 @@
+﻿@model bonesmakers.Models.ThemeModel
+
+<article class="card">
+    <div class="@(Model.Type == "Mythos" ? "mythos" : "logos")">
+        <div class="top">
+            <select class="selectType">
+                <option value="mythos" @(Model.Type == "Mythos" ? "selected" : "")>Mythos</option>
+                <option value="logos" @(Model.Type == "Logos" ? "selected" : "")>Logos</option>
+            </select>
+            <p> : </p>
+            <input type="text" value="@Model.KindOf" />
+        </div>
+        <div class="backText">
+            <input type="text" name="theme" value="@Model.Theme" />
+            <p style="background-color: rgb(0,0,0,0.0);">Theme</p>
+        </div>
+        <div class="backText">
+            <input type="text" name="title" value="@Model.Title" />
+            <p style="background-color: rgb(0,0,0,0.0);">Title</p>
+        </div>
+        <div class="trackingStatusRow">
+            <div class="column">
+                <p>@Model.Attention[0].Name</p>
+                <ul class="attention">
+                    <li>
+                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 1 ? "true" : "false")" />
+                    </li>
+                    <li>
+                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 2 ? "true" : "false")" />
+                    </li>
+                    <li>
+                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 3 ? "true" : "false")" />
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>@Model.Attention[1].Name</p>
+                <ul class="crack">
+                    <li>
+                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 1 ? "true" : "false")" />
+                    </li>
+                    <li>
+                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 2 ? "true" : "false")" />
+                    </li>
+                    <li>
+                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 3 ? "true" : "false")" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="sectionId">
+                <p>Identity</p>
+                <input type="text" value="@Model.Identity" />
+            </div>
+            <div class="sectionPowerTag">
+                <div class="title">
+                    <p>Power</p>
+                    <p>Burn</p>
+                </div>
+                @foreach (var Power in Model.PowerTags)
+                {
+                    <div class="tags">
+                        <input type="text" maxlength="1" value="@Power.Tag" />
+                        <input type="text" value="@Power.Title" />
+                        <input type="checkbox" Checked="@Power.Burn" />
+                    </div>
+                }
+                <div class="tags">
+                    <input type="text" maxlength="1" />
+                    <input type="text" />
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="sectionWeakTag">
+                <div class="title">
+                    <p>Weakness</p>
+                    <p>Invoke</p>
+                </div>
+                @foreach (var Power in Model.WeaknessTags)
+                {
+                    <div class="tags">
+                        <input type="text" maxlength="1" value="@Power.Tag" />
+                        <input type="text" value="@Power.Title" />
+                        <input type="checkbox" Checked="@Power.Burn" />
+                    </div>
+                }
+                <div class="tags">
+                    <input type="text" maxlength="1" />
+                    <input type="text" />
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="sectionImprov">
+                <p>Improvements</p>
+                @foreach (var Improvement in Model.Improvements)
+                {
+                    <input type="text" value="Improvement" />
+                }
+            </div>
+            <div class="sectionFlipside">
+                <p>Filpside</p>
+                <input type="text" value="@Model.Filpside" />
+            </div>
+        </div>
+    </div>
+</article>
+

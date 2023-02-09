@@ -11,18 +11,19 @@ namespace bonesmakers.Controllers
     {
         public ActionResult Index()
         {
+            CharacterModel character = new CharacterModel(0);
+            character.Themes[0].Attention[0].Current += 2;
+            foreach (var item in character.Themes)
+            {
+                item.KindOf = "test";
+            }
+            ViewBag.Themes = character.Themes;
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            CharacterModel character = new CharacterModel(0);
-            foreach (var item in character.Themes)
-            {
-                item.KindOf = "test";
-            }
-            ViewBag.Character = character;
             return View();
         }
 
