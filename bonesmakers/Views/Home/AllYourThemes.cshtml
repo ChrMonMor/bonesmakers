@@ -1,0 +1,9 @@
+﻿@{
+    Layout = null;
+}
+@foreach (bonesmakers.Models.ThemeModel item in ViewBag.Themes)
+{
+    <div>
+        @Html.Partial("_ThemeCard", item)
+    </div>
+}

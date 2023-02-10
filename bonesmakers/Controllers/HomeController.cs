@@ -11,13 +11,6 @@ namespace bonesmakers.Controllers
     {
         public ActionResult Index()
         {
-            CharacterModel character = new CharacterModel(0);
-            character.Themes[0].Attention[0].Current += 2;
-            foreach (var item in character.Themes)
-            {
-                item.KindOf = "test";
-            }
-            ViewBag.Themes = character.Themes;
             return View();
         }
 
@@ -31,6 +24,13 @@ namespace bonesmakers.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult AllYourThemes()
+        {
+            CharacterModel character = new CharacterModel(1);
+            ViewBag.Themes = character.Themes;
             return View();
         }
     }

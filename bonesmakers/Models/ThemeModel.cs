@@ -52,7 +52,6 @@ namespace bonesmakers.Models
             }
         }
 
-
         public int Id { get; set; }
         public string KindOf { get; set; }
         public string Description { get; set; }
@@ -65,5 +64,10 @@ namespace bonesmakers.Models
         public TagModel[] WeaknessTags { get; set; }
         public string[] Improvements { get; set; }
         public string Filpside { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

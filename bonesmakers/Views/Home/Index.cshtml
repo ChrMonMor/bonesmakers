@@ -1,11 +1,5 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@foreach (var item in ViewBag.Themes)
-{
-    bonesmakers.Models.ThemeModel model = item;
-    <div>
-        @Html.Partial("_ThemeCard", model)
-    </div>
-}
+
 
