@@ -1,9 +1,10 @@
 ﻿@{
     Layout = null;
-}
+}<link href="~/Content/ThemeCard.css" rel="stylesheet" />
 @foreach (bonesmakers.Models.ThemeModel item in ViewBag.Themes)
 {
     <div>
         @Html.Partial("_ThemeCard", item)
     </div>
 }
+<script src="~/Scripts/JavaScript.js"></script>

@@ -131,6 +131,7 @@
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Models\TrackingCardModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\ThemeCard.css" />
@@ -164,6 +165,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_ThemeCard.cshtml" />
     <Content Include="Views\Home\AllYourThemes.cshtml" />
+    <Content Include="Views\Shared\_GrowthAttention.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

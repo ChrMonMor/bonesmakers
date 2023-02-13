@@ -20,32 +20,10 @@
         </div>
         <div class="trackingStatusRow">
             <div class="column">
-                <p>@Model.Attention[0].Name</p>
-                <ul class="attention">
-                    <li>
-                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 1 ? "true" : "false")" />
-                    </li>
-                    <li>
-                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 2 ? "true" : "false")" />
-                    </li>
-                    <li>
-                        <input type="checkbox" id="attention" name="attention" value="@(Model.Attention[0].Current >= 3 ? "true" : "false")" />
-                    </li>
-                </ul>
+                @Html.Partial("_GrowthAttention", @Model.Attention[0])
             </div>
             <div class="column">
-                <p>@Model.Attention[1].Name</p>
-                <ul class="crack">
-                    <li>
-                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 1 ? "true" : "false")" />
-                    </li>
-                    <li>
-                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 2 ? "true" : "false")" />
-                    </li>
-                    <li>
-                        <input type="checkbox" id="crack" name="crack" value="@(Model.Attention[1].Current >= 3 ? "true" : "false")" />
-                    </li>
-                </ul>
+                @Html.Partial("_GrowthAttention", @Model.Attention[1])
             </div>
         </div>
         <div class="section">

@@ -1,0 +1,14 @@
+﻿@model bonesmakers.Models.GrowthModel
+
+        <p>@Model.Name</p>
+        <ul class="attention">
+            <li>
+                <input type="checkbox" id="@Model.Name" name="@Model.Name" value="@(Model.Current >= 1 ? "true" : "false")" />
+            </li>
+            <li>
+                <input type="checkbox" id="@Model.Name" name="@Model.Name" value="@(Model.Current >= 2 ? "true" : "false")" />
+            </li>
+            <li>
+                <input type="checkbox" id="@Model.Name" name="@Model.Name" value="@(Model.Current >= 3 ? "true" : "false")" />
+            </li>
+        </ul>
